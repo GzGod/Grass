@@ -80,13 +80,12 @@ async def connect_to_wss(socks5_proxy, user_id):
 async def main():
     _user_id = 'Replace Your User ID HERE'   # Replace Your User ID HERE 
     proxy_file = 'proxy.txt' # your Path to Proxy3.txt file 
-    # formate =&gt; socks5://username:pass@ip:port
+    # format =&gt; socks5://username:pass@ip:port
     with open(proxy_file, 'r') as file:
         all_proxies = file.read().splitlines()
 
     sample_size = min(100, len(all_proxies))
     if sample_size &lt;= 0:
-
         raise ValueError("No proxies available to sample from")
 
     active_proxies = random.sample(all_proxies, sample_size)  # Dynamically adjust sample size
