@@ -86,6 +86,7 @@ async def main():
 
     sample_size = min(100, len(all_proxies))
     if sample_size &lt;= 0:
+
         raise ValueError("No proxies available to sample from")
 
     active_proxies = random.sample(all_proxies, sample_size)  # Dynamically adjust sample size
